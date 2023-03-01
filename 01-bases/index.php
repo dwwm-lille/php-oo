@@ -26,3 +26,20 @@ var_dump($mina);
 
 <p><?= $bianca->playWith($mina); ?></p>
 <p><?= $mina->playWith($bianca); ?></p>
+
+<h2>Exercice classe Car</h2>
+<?php
+require __DIR__.'/Car.php';
+
+$alfa = new Car('Alfa', 'Rodéo', 'Grise');
+$bmw = new Car('BM', 'Double Pied', 'Noire');
+
+// On repeint la voiture
+$alfa->setColor('Rouge');
+?>
+
+<p><?= $alfa->drive(); ?> et <?= $alfa->klaxon(); ?></p>
+<p><?= $bmw->drive(); ?> et <?= $bmw->klaxon(); ?></p>
+
+<p>La voiture 1 est <?= $alfa->getColor(); ?>, c'est un(e) <?= $alfa->name(); ?></p>
+<p>La voiture 2 est <?= $bmw->getColor(); ?>, c'est un(e) <?= $bmw->name(); ?></p>
