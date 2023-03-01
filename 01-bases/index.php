@@ -36,6 +36,8 @@ $bmw = new Car('BM', 'Double Pied', 'Noire');
 
 // On repeint la voiture
 $alfa->setColor('Rouge');
+
+var_dump($alfa);
 ?>
 
 <p><?= $alfa->drive(); ?> et <?= $alfa->klaxon(); ?></p>
@@ -43,3 +45,15 @@ $alfa->setColor('Rouge');
 
 <p>La voiture 1 est <?= $alfa->getColor(); ?>, c'est un(e) <?= $alfa->name(); ?></p>
 <p>La voiture 2 est <?= $bmw->getColor(); ?>, c'est un(e) <?= $bmw->name(); ?></p>
+
+<?php while ($alfa->hasFuel()) { ?>
+     <p><?= $alfa->drive(); ?></p>
+<?php } ?>
+
+<p>On a plus d'essence...</p>
+<p><?= $alfa->drive(); ?></p>
+<p><?= $alfa->drive(); ?></p>
+<p>On veut mettre de l'essence</p>
+<p><?= $alfa->fill(10)->fill(10)->drive(); ?></p>
+
+<?php var_dump($alfa); ?>
