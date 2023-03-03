@@ -819,21 +819,6 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "Animal",
-					"ownedElements": [
-						{
-							"_type": "UMLGeneralization",
-							"_id": "AAAAAAGGonx/r3Ffky8=",
-							"_parent": {
-								"$ref": "AAAAAAGGonbFp3DAnf8="
-							},
-							"source": {
-								"$ref": "AAAAAAGGonbFp3DAnf8="
-							},
-							"target": {
-								"$ref": "AAAAAAGGonbFp3DAnf8="
-							}
-						}
-					],
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
