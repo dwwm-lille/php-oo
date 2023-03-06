@@ -2,7 +2,7 @@
     "name": "matthieu/06-mvc",
     "autoload": {
         "psr-4": {
-            "Matthieu\\06Mvc\\": "src/"
+            "M2i\\Mvc\\": "src/"
         }
     },
     "authors": [
