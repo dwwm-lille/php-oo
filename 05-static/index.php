@@ -18,6 +18,7 @@ $f3 = new Formula('F3');
 echo Formula::$count.'<br />'; // 3
 echo Formula::howMany().'<br />';
 echo Formula::WHEELS.' roues <br />';
+$f1 = Formula::build(12);
 var_dump($f1);
 var_dump($f2);
 var_dump($f3);

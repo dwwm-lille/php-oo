@@ -20,4 +20,9 @@ class Formula
     {
         return 'Sur la piste, il y a '.self::$count.' formules.';
     }
+
+    public static function build($number)
+    {
+        return new Formula('F'.$number);
+    }
 }
