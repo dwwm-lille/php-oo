@@ -1,0 +1,15 @@
+{
+    "name": "matthieu/06-mvc",
+    "autoload": {
+        "psr-4": {
+            "Matthieu\\06Mvc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Matthieu Mota",
+            "email": "matthieumota@gmail.com"
+        }
+    ],
+    "require": {}
+}
