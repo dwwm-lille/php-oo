@@ -6,6 +6,7 @@ abstract class Character
     private $health = 100;
     protected $strength = 10;
     protected $mana = 10;
+    private $items = [];
 
     public function __construct($name)
     {
@@ -30,6 +31,27 @@ abstract class Character
     public function getMana()
     {
         return $this->mana;
+    }
+
+    public function pick(Item $item)
+    {
+        $this->items[] = $item;
+    }
+
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    public function restore()
+    {
+        foreach ($this->items as $index => $item) {
+            if ($item->getName() === 'Potion') {
+                $this->health += 10;
+                unset($this->items[$index]);
+                return;
+            }
+        }
     }
 
     public function attack(Character $target)

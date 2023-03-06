@@ -12,11 +12,17 @@
         require __DIR__.'/src/Hunter.php';
         require __DIR__.'/src/Magus.php';
         require __DIR__.'/src/Warrior.php';
+        require __DIR__.'/src/Item.php';
 
         $aragorn = new Warrior('Aragorn');
         $legolas = new Hunter('Legolas');
         $gandalf = new Magus('Gandalf');
         $boromir = new Warrior('Boromir');
+
+        $potion = new Item('Potion');
+        $sword = new Item('Epée');
+
+        $boromir->pick($potion);
     ?>
 
     <div class="max-w-5xl mx-auto">
@@ -114,6 +120,12 @@
                 <?= $boromir->render(); ?>
             </div>
         </div>
+
+        <p class="mt-6">Boromir a des objets</p>
+        <?php var_dump($boromir->getItems()); ?>
+        <?php $boromir->restore(); ?>
+        <?php var_dump($boromir->getItems()); ?>
+        <?= $boromir->render(); ?>
     </div>
 </body>
 </html>
