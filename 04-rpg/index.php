@@ -16,6 +16,7 @@
         $aragorn = new Warrior('Aragorn');
         $legolas = new Hunter('Legolas');
         $gandalf = new Magus('Gandalf');
+        $boromir = new Warrior('Boromir');
     ?>
 
     <div class="max-w-5xl mx-auto">
@@ -93,6 +94,24 @@
             </div>
             <div class="w-1/2">
                 <?= $aragorn->render(); ?>
+            </div>
+        </div>
+
+        <p class="mt-6"><?= $legolas->rangedAttack($gandalf, $boromir); ?></p>
+        <div class="flex">
+            <div class="w-1/2">
+                <?= $legolas->render(); ?>
+            </div>
+            <div class="w-1/2">
+                <?= $gandalf->render(); ?>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="w-1/2">
+                <?= $legolas->render(); ?>
+            </div>
+            <div class="w-1/2">
+                <?= $boromir->render(); ?>
             </div>
         </div>
     </div>
