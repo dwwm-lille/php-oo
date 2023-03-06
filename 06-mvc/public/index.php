@@ -12,3 +12,5 @@ $app = new App();
 // On a installé les collections de Laravel
 // $sum = collect([1, 2, 3, 4])->dump()->sum();
 // dump($sum);
+
+$app->run();
