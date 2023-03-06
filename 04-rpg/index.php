@@ -126,6 +126,14 @@
         <?php $boromir->restore(); ?>
         <?php var_dump($boromir->getItems()); ?>
         <?= $boromir->render(); ?>
+
+        <p class="mt-6">Legolas est level 34</p>
+        <?php
+            for ($i = 0; $i < 99; $i++) {
+                $legolas->attack($aragorn);
+            }
+        ?>
+        <?php var_dump($legolas); ?>
     </div>
 </body>
 </html>

@@ -7,6 +7,8 @@ abstract class Character
     protected $strength = 10;
     protected $mana = 10;
     private $items = [];
+    private $level = 1;
+    private $experience = 0;
 
     public function __construct($name)
     {
@@ -72,9 +74,17 @@ abstract class Character
 
         if ($target->health < 0) { // Evite un bug de santé négative
             $target->health = 0;
+            $this->gainExperience();
         }
 
         return $this;
+    }
+
+    protected function gainExperience()
+    {
+        if (++$this->experience % 3 === 0) {
+            $this->level++;
+        }
     }
 
     protected function log(Character $target, $action)
