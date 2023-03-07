@@ -12,6 +12,12 @@ class App
      */
     public function run(): void
     {
+        // Pour avoir les erreurs "propres"
+        $whoops = new \Whoops\Run();
+        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+        $whoops->register();
+
+        // Lancement du contrôleur
         $controller = new MovieController();
         $controller->index();
     }
