@@ -23,12 +23,12 @@ class DB
     /**
      * Permet de faire un select sur la BDD.
      */
-    public static function select(string $sql, array $parameters = []): array
+    public static function select(string $sql, array $parameters = [], string $class = null): array
     {
         $query = self::getInstance()->prepare($sql);
         $query->execute($parameters);
 
-        return $query->fetchAll();
+        return $query->fetchAll(\PDO::FETCH_CLASS, $class);
     }
 
     /**

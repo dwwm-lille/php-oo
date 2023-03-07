@@ -4,6 +4,6 @@ namespace M2i\Mvc\Model;
 
 class Movie extends Model
 {
-    protected $id_movie;
-    protected $title;
+    public $id_movie;
+    public $title;
 }
