@@ -29,4 +29,18 @@ class MovieController extends Controller
             'movie' => $movie,
         ]);
     }
+
+    public function create()
+    {
+        $movie = new Movie();
+        $movie->title = 'Un nouveau film';
+        $movie->released_at = '2023-03-07';
+        $movie->description = 'Description';
+        $movie->duration = 150;
+        $movie->cover = 'new.jpg';
+        $movie->id_category = 1;
+        $movie->save();
+
+        // @todo Formulaire
+    }
 }
