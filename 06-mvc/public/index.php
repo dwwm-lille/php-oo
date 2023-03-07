@@ -13,4 +13,10 @@ $app = new App();
 // $sum = collect([1, 2, 3, 4])->dump()->sum();
 // dump($sum);
 
+// On va définir toutes les routes / pages ici
+$app->addRoutes([
+    ['GET', '/', 'HomeController@index'],
+    ['GET', '/les-films', 'MovieController@index'],
+]);
+
 $app->run();

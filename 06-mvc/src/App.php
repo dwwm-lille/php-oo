@@ -4,7 +4,7 @@ namespace M2i\Mvc;
 
 use M2i\Mvc\Controller\MovieController;
 
-class App
+class App extends \AltoRouter
 {
     /**
      * Permet de lancer l'application et de lancer le bon contrôleur
@@ -18,7 +18,22 @@ class App
         $whoops->register();
 
         // Lancement du contrôleur
-        $controller = new MovieController();
-        $controller->index();
+        // $controller = new MovieController();
+        // $controller->index();
+
+        // Traiter la requête avec AltoRouter
+        $match = $this->match();
+
+        if ($match) {
+            // MovieController@index
+            [$controller, $method] = explode('@', $match['target']); // ['MovieController', 'index']
+            $controller = '\\M2i\\Mvc\\Controller\\'.$controller;
+            $controller = new $controller(); // new \M2i\Mvc\Controller\MovieController();
+            $controller->$method(); // $controller->index();
+        } else {
+            http_response_code(404);
+            // @todo Remplacer le echo par un fichier
+            echo '<h1>404</h1>';
+        }
     }
 }
