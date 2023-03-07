@@ -4,7 +4,10 @@ namespace M2i\Mvc\Controller;
 
 abstract class Controller
 {
-    public function render($template, $data = [])
+    /**
+     * Permet d'afficher une vue avec des données
+     */
+    public function render(string $template, array $data = []): void
     {
         foreach ($data as $variable => $value) {
             // $movies = [];

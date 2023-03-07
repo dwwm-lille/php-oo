@@ -6,7 +6,10 @@ use M2i\Mvc\DB;
 
 abstract class Model
 {
-    public static function all()
+    /**
+     * Permet de renvoyer toutes les lignes d'une table liée au modèle.
+     */
+    public static function all(): array
     {
         $table = get_called_class(); // M2i\Mvc\Model\Movie
         $table = substr(strrchr($table, '\\'), 1); // \Movie => Movie
