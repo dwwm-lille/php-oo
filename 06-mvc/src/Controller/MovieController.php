@@ -15,4 +15,18 @@ class MovieController extends Controller
             'name' => 'Fiorella',
         ]);
     }
+
+    public function show($id)
+    {
+        $movie = Movie::find($id);
+
+        if (! $movie) {
+            http_response_code(404);
+            return $this->render('404.html.php');
+        }
+
+        return $this->render('movies/show.html.php', [
+            'movie' => $movie,
+        ]);
+    }
 }

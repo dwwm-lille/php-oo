@@ -29,7 +29,7 @@ class App extends \AltoRouter
             [$controller, $method] = explode('@', $match['target']); // ['MovieController', 'index']
             $controller = '\\M2i\\Mvc\\Controller\\'.$controller;
             $controller = new $controller(); // new \M2i\Mvc\Controller\MovieController();
-            $controller->$method(); // $controller->index();
+            $controller->$method(...$match['params']); // $controller->index();
         } else {
             http_response_code(404);
             require __DIR__.'/../templates/404.html.php';

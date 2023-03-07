@@ -14,6 +14,6 @@ class Movie extends Model
 
     public function cover()
     {
-        return 'uploads/'.$this->cover;
+        return '/uploads/'.$this->cover;
     }
 }

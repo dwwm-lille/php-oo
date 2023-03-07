@@ -34,10 +34,11 @@ class DB
     /**
      * Permet de faire un select (seul) sur la BDD.
      */
-    public static function selectOne(string $sql, array $parameters = []): array
+    public static function selectOne(string $sql, array $parameters = [], string $class = null): mixed
     {
         $query = self::getInstance()->prepare($sql);
         $query->execute($parameters);
+        $query->setFetchMode(\PDO::FETCH_CLASS, $class);
 
         return $query->fetch();
     }

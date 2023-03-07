@@ -22,6 +22,18 @@ abstract class Model
     }
 
     /**
+     * Permet de renvoyer une seule ligne d'une table liée au modèle.
+     */
+    public static function find(int $id): mixed
+    {
+        $table = self::table();
+
+        return DB::selectOne("SELECT * FROM $table WHERE id_$table = :id", [
+            'id' => $id,
+        ], get_called_class());
+    }
+
+    /**
      * Permet de générer le nom de la table par rapport au nom du modèle.
      */
     private static function table(): string
