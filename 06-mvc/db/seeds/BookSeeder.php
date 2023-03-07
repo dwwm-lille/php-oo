@@ -15,7 +15,7 @@ class BookSeeder extends AbstractSeed
                 'isbn' => 'abc',
                 'author' => 'JK Rowling',
                 'published_at' => '1997-12-11',
-                'image' => 'uploads/01.jpg',
+                'image' => '01.jpg',
             ],
             [
                 'title' => 'Harry Potter 2',
@@ -23,7 +23,7 @@ class BookSeeder extends AbstractSeed
                 'isbn' => 'def',
                 'author' => 'JK Rowling',
                 'published_at' => '1999-12-11',
-                'image' => 'uploads/02.jpg',
+                'image' => '02.jpg',
             ],
             [
                 'title' => 'Harry Potter 3',
@@ -31,7 +31,7 @@ class BookSeeder extends AbstractSeed
                 'isbn' => 'ghi',
                 'author' => 'JK Rowling',
                 'published_at' => '2001-12-11',
-                'image' => 'uploads/03.jpg',
+                'image' => '03.jpg',
             ]
         ])->saveData();
     }
