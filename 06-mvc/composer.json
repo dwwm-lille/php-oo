@@ -17,6 +17,7 @@
     "require": {
         "illuminate/collections": "^10.2",
         "filp/whoops": "^2.15",
-        "altorouter/altorouter": "^2.0"
+        "altorouter/altorouter": "^2.0",
+        "robmorgan/phinx": "^0.13.4"
     }
 }
