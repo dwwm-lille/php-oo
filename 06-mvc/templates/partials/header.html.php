@@ -14,6 +14,7 @@
                 <nav class="flex gap-4">
                     <a href="/">Accueil</a>
                     <a href="/les-films">Films</a>
+                    <a href="/les-livres">Livres</a>
                 </nav>
             </div>
         </div>
