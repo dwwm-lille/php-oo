@@ -26,6 +26,7 @@ $app->addRoutes([
 
     ['GET', '/les-livres', 'BookController@index'],
     ['GET', '/livre/[i:id]', 'BookController@show'],
+    ['GET|POST', '/livre/nouveau', 'BookController@create'],
 ]);
 
 $app->run();

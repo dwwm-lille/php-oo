@@ -27,4 +27,20 @@ abstract class Controller
 
         return $this->render('404.html.php');
     }
+
+    /**
+     * Permet de récupèrer les données en post.
+     */
+    public function post($key)
+    {
+        return trim(htmlspecialchars($_POST[$key] ?? ''));
+    }
+
+    /**
+     * Permet de vérifier qu'un formulaire est soumis.
+     */
+    public function submit()
+    {
+        return ! empty($_POST);
+    }
 }

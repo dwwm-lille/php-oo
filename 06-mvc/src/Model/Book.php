@@ -31,4 +31,9 @@ class Book extends Model
     {
         return date('d/m/Y', strtotime($this->published_at));
     }
+
+    public function validIsbn()
+    {
+        return mb_strlen($this->isbn) === 10 && is_numeric($this->isbn);
+    }
 }

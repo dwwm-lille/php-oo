@@ -25,4 +25,31 @@ class BookController extends Controller
             'book' => Book::find($id),
         ]);
     }
+
+    public function create()
+    {
+        $book = new Book();
+        $book->title = $this->post('title');
+        $book->isbn = $this->post('isbn');
+        $errors = [];
+
+        if ($this->submit()) {
+            if (empty($book->title)) {
+                $errors['title'] = 'Le titre est invalide.';
+            }
+
+            if (! $book->validIsbn()) {
+                $errors['isbn'] = 'ISBN est invalide.';
+            }
+
+            if (empty($errors)) {
+                $book->save();
+            }
+        }
+
+        return $this->render('books/create.html.php', [
+            'book' => $book,
+            'errors' => $errors,
+        ]);
+    }
 }
