@@ -26,4 +26,9 @@ class Book extends Model
     {
         return date('Y', strtotime($this->published_at));
     }
+
+    public function publishedAt()
+    {
+        return date('d/m/Y', strtotime($this->published_at));
+    }
 }

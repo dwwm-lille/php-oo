@@ -17,4 +17,14 @@ abstract class Controller
 
         require __DIR__.'/../../templates/'.$template;
     }
+
+    /**
+     * Permet d'afficher une 404
+     */
+    public function render404()
+    {
+        http_response_code(404);
+
+        return $this->render('404.html.php');
+    }
 }

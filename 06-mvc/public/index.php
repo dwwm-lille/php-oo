@@ -25,6 +25,7 @@ $app->addRoutes([
     ['GET|POST', '/film/nouveau', 'MovieController@create'],
 
     ['GET', '/les-livres', 'BookController@index'],
+    ['GET', '/livre/[i:id]', 'BookController@show'],
 ]);
 
 $app->run();
