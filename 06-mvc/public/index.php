@@ -23,6 +23,8 @@ $app->addRoutes([
     ['GET', '/les-films', 'MovieController@index'],
     ['GET', '/film/[i:id]', 'MovieController@show'],
     ['GET|POST', '/film/nouveau', 'MovieController@create'],
+
+    ['GET', '/les-livres', 'BookController@index'],
 ]);
 
 $app->run();
